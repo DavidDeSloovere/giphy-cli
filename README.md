@@ -7,7 +7,7 @@ Download the .NET Core SDK [2.1.300](https://www.microsoft.com/net/download) or 
 Once installed, run this command:
 
 ```
-> dotnet tool install --global giphy-cli
+> dotnet tool install --global GiphyCli
 ```
 
 To search for a gif, simply use
