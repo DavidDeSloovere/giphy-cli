@@ -3,8 +3,9 @@ Giphy CLI as global dotnet tool - get that url or markdown fast
 
 ## Get started
 
-Download the .NET Core SDK [2.1.300](https://www.microsoft.com/net/download) or newer.
-Once installed, run this command:
+You'll need the .NET Core SDK [2.1.300](https://www.microsoft.com/net/download) or newer to install global tools.
+
+Install the Giphy CLI with this command:
 
 ```
 > dotnet tool install --global GiphyCli
