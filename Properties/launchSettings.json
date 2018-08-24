@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GiphyCli": {
+      "commandName": "Project",
+      "commandLineArgs": "cheeseburger"
+    }
+  }
+}
