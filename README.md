@@ -34,6 +34,10 @@ That's it; no options needed. Just pass the search as the first argument.
 > giphy "awesome cheeseburger"
 ```
 
+So it would look something like this:
+
 ![Screenshot Giphy CLI](README-screenshot.png)
+
+And allow you to just paste the markdown that results in this:
 
 ![high five amy poehler GIF](https://media1.giphy.com/media/120jXUxrHF5QJ2/giphy.gif)
