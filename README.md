@@ -35,3 +35,5 @@ That's it; no options needed. Just pass the search as the first argument.
 ```
 
 ![Screenshot Giphy CLI](README-screenshot.png)
+
+![high five amy poehler GIF](https://media1.giphy.com/media/120jXUxrHF5QJ2/giphy.gif)
