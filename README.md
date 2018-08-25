@@ -33,3 +33,5 @@ That's it; no options needed. Just pass the search as the first argument.
 ```
 > giphy "awesome cheeseburger"
 ```
+
+![Screenshot Giphy CLI](README-screenshot.png)
