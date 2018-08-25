@@ -22,17 +22,19 @@ namespace GiphyCli
 
         private void OnExecute()
         {
+            Console.WriteLine("");
             Console.WriteLine($"Searching giphy.com API for `{this.Search}`...");
 
             var client = new GiphyApi(ApiKey);
             var result = client.Search(this.Search);
             if (result == null)
             {
-                Console.WriteLine("Something went wrong.");
+                Console.WriteLine("Oh no. Didn't get any results back. What crazy thing are you searching for?");
+                Console.WriteLine("");
                 return;
             }
 
-            Console.WriteLine($"Found `{result.Title}` at `{result.Url}`");
+            Console.WriteLine($"Found `{result.Title}` at {result.Url}");
             Console.WriteLine("");
 
             Console.WriteLine("GIF URL");
@@ -42,6 +44,7 @@ namespace GiphyCli
             Console.WriteLine($"![{result.Title}]({result.GifUrl})");
             Console.WriteLine("");
             Console.WriteLine("Thanks for using this CLI. Hope you enjoy it.");
+            Console.WriteLine("Visit https://github.com/DavidDeSloovere/giphy-cli for comments, issues, ...");
             Console.WriteLine("");
         }
     }
