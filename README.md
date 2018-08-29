@@ -4,6 +4,8 @@ Giphy CLI as global dotnet tool - get that url or markdown fast
 Comments, ideas, bug reports and PR are welcome here.
 
 ![Build Status Travis](https://travis-ci.com/DavidDeSloovere/giphy-cli.svg?branch=master)
+[![Build status](https://ci.appveyor.com/api/projects/status/ivbwor72rg6o3qk1/branch/master?svg=true)](https://ci.appveyor.com/project/DavidDeSloovere/giphy-cli/branch/master)
+
 
 ## Get started
 
