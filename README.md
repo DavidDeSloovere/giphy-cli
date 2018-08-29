@@ -3,6 +3,8 @@ Giphy CLI as global dotnet tool - get that url or markdown fast
 
 Comments, ideas, bug reports and PR are welcome here.
 
+![Build Status Travis](https://travis-ci.com/DavidDeSloovere/giphy-cli.svg?branch=master)
+
 ## Get started
 
 Header over to [GiphyCli on NuGet](https://www.nuget.org/packages/GiphyCli) or continue reading:
