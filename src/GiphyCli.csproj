@@ -7,12 +7,10 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <Authors>DavidDeSloovere</Authors>
     <Company />
-    <Description>Unofficial Giphy CLI as global dotnet tool - get that url or markdown fast.
-</Description>
+    <Description>Unofficial Giphy CLI as global dotnet tool - get that url or markdown fast.</Description>
     <PackageProjectUrl>https://github.com/DavidDeSloovere/giphy-cli</PackageProjectUrl>
     <RepositoryUrl>https://github.com/DavidDeSloovere/giphy-cli.git</RepositoryUrl>
     <PackageTags>giphy cli</PackageTags>
-    <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
     <Product>Giphy CLI</Product>
     <RepositoryType>git</RepositoryType>
     <PackageIconUrl>https://raw.githubusercontent.com/DavidDeSloovere/giphy-cli/master/icon.png</PackageIconUrl>
