@@ -16,13 +16,17 @@ dotnet_csproj:
 environment:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
-build:
-  publish_core_console: true
-  verbosity: minimal
+build_script:
+  - ps: .\build.ps1 -IsOfficialBuild
+artifacts:
+  - path: 'artifacts\*.nupkg'
+    name: Packages
+    type: NuGetPackages  
 deploy:
 - provider: GitHub
   auth_token:
     secure: 0bxTAByaY8EnuFSW7nFhWfeKtFZSWlhTNnKXfv9hURfHid5vSI10kz/FcEY5DHkCeEbQB7Dv7F4c3z17rkP2FU0HuqOTnf8mqYqAsESO2NM=
+  artifact: Packages
   draft: true
   on:
     branch: master
