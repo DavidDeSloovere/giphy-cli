@@ -17,9 +17,6 @@ namespace GiphyCli
         [Required]
         public string Search { get; }
 
-        [Option(Description = "When using iTerm2, this tool will display the image in output, you can disable this behaviour with this flag.")]
-        public bool DisableITermImages { get; }
-
         // [Option(Description = "An optional parameter, with a default value.\nThe number of times to say hello.")]
         // [Range(1, 1000)]
         // public int Count { get; } = 1;
@@ -45,10 +42,9 @@ namespace GiphyCli
             Console.WriteLine($"{result.GifUrl}");
             Console.WriteLine("");
         
-            if (!DisableITermImages && Environment.GetEnvironmentVariable("TERM_PROGRAM") == "iTerm.app")
+            if (Environment.GetEnvironmentVariable("TERM_PROGRAM") == "iTerm.app")
             {
-                var esc = "\u001B]1337";
-                Console.Write(esc);
+                Console.Write("\u001B]1337");
                 Console.Write(";File=;inline=1:");
                 using (var httpClient = new HttpClient())
                 {
