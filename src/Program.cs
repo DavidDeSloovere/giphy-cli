@@ -13,13 +13,9 @@ namespace GiphyCli
 
         public static int Main(string[] args) => CommandLineApplication.Execute<Program>(args);
 
-        [Argument(0, Description = "A positional parameter that must be specified.\nThe search to execute.")]
+        [Argument(0, Description = "The search to execute.")]
         [Required]
         public string Search { get; }
-
-        // [Option(Description = "An optional parameter, with a default value.\nThe number of times to say hello.")]
-        // [Range(1, 1000)]
-        // public int Count { get; } = 1;
 
         private void OnExecute()
         {
@@ -41,7 +37,7 @@ namespace GiphyCli
             Console.WriteLine("GIF URL");
             Console.WriteLine($"{result.GifUrl}");
             Console.WriteLine("");
-        
+
             if (Environment.GetEnvironmentVariable("TERM_PROGRAM") == "iTerm.app")
             {
                 Console.Write("\u001B]1337");
@@ -52,6 +48,7 @@ namespace GiphyCli
                     Console.Write(Convert.ToBase64String(bytes));
                 }
                 Console.Write("\u0007");
+                Console.WriteLine("");
                 Console.WriteLine("");
             }
 
