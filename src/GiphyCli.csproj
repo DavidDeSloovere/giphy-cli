@@ -14,6 +14,9 @@
     <Product>Giphy CLI</Product>
     <RepositoryType>git</RepositoryType>
     <PackageIconUrl>https://raw.githubusercontent.com/DavidDeSloovere/giphy-cli/master/icon.png</PackageIconUrl>
+    <Version>1.1.0</Version>
+    <PackageReleaseNotes>Preview image in iTerm2 (PR by https://github.com/slang25)
+Handle no results</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
