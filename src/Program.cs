@@ -2,6 +2,7 @@ namespace GiphyCli
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.Net.Http;
     using McMaster.Extensions.CommandLineUtils;
 
     [Command(Description = "Global CLI to quickly get a Giphy link or markdown for your search (which should always be lolcats).")]
@@ -40,6 +41,20 @@ namespace GiphyCli
             Console.WriteLine("GIF URL");
             Console.WriteLine($"{result.GifUrl}");
             Console.WriteLine("");
+        
+            if (Environment.GetEnvironmentVariable("TERM_PROGRAM") == "iTerm.app")
+            {
+                Console.Write("\u001B]1337");
+                Console.Write(";File=;inline=1:");
+                using (var httpClient = new HttpClient())
+                {
+                    var bytes = httpClient.GetByteArrayAsync(result.GifUrl).GetAwaiter().GetResult();
+                    Console.Write(Convert.ToBase64String(bytes));
+                }
+                Console.Write("\u0007");
+                Console.WriteLine("");
+            }
+
             Console.WriteLine("MARKDOWN:");
             Console.WriteLine($"![{result.Title}]({result.GifUrl})");
             Console.WriteLine("");
