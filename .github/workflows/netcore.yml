@@ -8,14 +8,21 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    env:
+      DOTNET_NOLOGO: true
 
     steps:
     - name: Checkout
       uses: actions/checkout@v2
       with:
         fetch-depth: 0
+
+    - name: .NET SDK
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.x' # SDK Version to use; x will use the latest version of the 3.1 channel
+
 
     - name: Install GitVersion
       uses: gittools/actions/gitversion/setup@v0.9.4
