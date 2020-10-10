@@ -7,6 +7,7 @@ namespace GiphyCli
     using JetBrains.Annotations;
     using McMaster.Extensions.CommandLineUtils;
     using TextCopy;
+    using Console = Colorful.Console;
 
     [Command(Description = "Global CLI to quickly get a Giphy link or markdown for your search (which should always be lolcats).")]
     public class Program
@@ -24,8 +25,7 @@ namespace GiphyCli
         private void OnExecute()
         {
             Console.WriteLine("");
-            Console.WriteLine("Thanks for using this CLI. Hope you enjoy it.");
-            Console.WriteLine("Visit https://github.com/DavidDeSloovere/giphy-cli for comments, issues, ...");
+            Console.WriteAscii("GIPHY CLI");
             Console.WriteLine("");
             Console.WriteLine($"Searching giphy.com API for `{this.Search}`...");
 
@@ -41,11 +41,16 @@ namespace GiphyCli
             var markdownText = $"![{result.Title}]({result.GifUrl})";
             var gifUrlText = $"{result.GifUrl}";
 
-            Console.WriteLine($"Found `{result.Title}` at {result.Url}");
+            Console.WriteLine($"> Found `{result.Title}` at {result.Url}");
+            Console.WriteLine($"{result.Url}");
             Console.WriteLine("");
 
             Console.WriteLine("> GIF URL");
             Console.WriteLine(gifUrlText);
+            Console.WriteLine("");
+
+            Console.WriteLine("> MARKDOWN");
+            Console.WriteLine(markdownText);
             Console.WriteLine("");
 
             if (Environment.GetEnvironmentVariable("TERM_PROGRAM") == "iTerm.app")
@@ -61,10 +66,7 @@ namespace GiphyCli
                 Console.WriteLine("");
             }
 
-            Console.WriteLine("> MARKDOWN");
-            Console.WriteLine(markdownText);
             Console.WriteLine("");
-
             // Awesome lib: https://github.com/shibayan/Sharprompt
             var value = Sharprompt.Prompt.Select<ActionSelectOptions>("What should I do next?");
             switch (value)
@@ -81,6 +83,10 @@ namespace GiphyCli
                     ClipboardService.SetText(markdownText);
                     break;
             }
+
+            Console.WriteLine("");
+            Console.WriteLine("Thanks for using the Giphy CLI for .NET. Visit https://github.com/DavidDeSloovere/giphy-cli for comments, issues, ...");
+
         }
 
         public static void OpenBrowser(string url)
@@ -90,7 +96,7 @@ namespace GiphyCli
                 FileName = url,
                 UseShellExecute = true
             };
-            Process.Start (psi);
+            Process.Start(psi);
         }
     }
 }

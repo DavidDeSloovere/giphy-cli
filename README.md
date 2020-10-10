@@ -46,5 +46,5 @@ And allow you to just paste the markdown that results in this:
 
 ## Features
 
-- Markdown output ready to copy and paste
+- Interactive prompt: Open giphy.com URL, copy .gif deeplink or __copy markdown to clipboard__
 - Preview image in iTerm2 (PR by https://github.com/slang25) 
