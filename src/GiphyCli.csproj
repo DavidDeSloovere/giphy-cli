@@ -7,18 +7,19 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Authors>DavidDeSloovere</Authors>
     <Company />
-    <Description>Unofficial Giphy CLI as global dotnet tool - get that url or markdown fast.</Description>
+    <Description>Unofficial Giphy CLI as global dotnet tool - get that url or markdown fast.
+&gt; `giphy lolcats`</Description>
     <PackageProjectUrl>https://github.com/DavidDeSloovere/giphy-cli</PackageProjectUrl>
     <RepositoryUrl>https://github.com/DavidDeSloovere/giphy-cli.git</RepositoryUrl>
     <PackageTags>giphy cli</PackageTags>
     <Product>Giphy CLI</Product>
     <RepositoryType>git</RepositoryType>
-    <PackageIconUrl>https://raw.githubusercontent.com/DavidDeSloovere/giphy-cli/master/icon.png</PackageIconUrl>
-    <Version>1.1.0</Version>
-    <PackageReleaseNotes>Preview image in iTerm2 (PR by https://github.com/slang25)
-Handle no results</PackageReleaseNotes>
+    <PackageIconUrl></PackageIconUrl>
+    <Version>1.2.0</Version>
+    <PackageReleaseNotes>Interactive prompt with option to copy markdown to clipboard.</PackageReleaseNotes>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Colorful.Console" Version="1.2.11" />
     <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" />
@@ -26,6 +27,12 @@ Handle no results</PackageReleaseNotes>
     <PackageReference Include="RestSharp" Version="106.11.7" />
     <PackageReference Include="Sharprompt" Version="2.0.0" />
     <PackageReference Include="TextCopy" Version="4.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
