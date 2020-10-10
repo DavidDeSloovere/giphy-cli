@@ -2,23 +2,30 @@ namespace GiphyCli
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.Diagnostics;
     using System.Net.Http;
+    using JetBrains.Annotations;
     using McMaster.Extensions.CommandLineUtils;
+    using TextCopy;
 
     [Command(Description = "Global CLI to quickly get a Giphy link or markdown for your search (which should always be lolcats).")]
     public class Program
     {
         // one API key for now
-        private static readonly string ApiKey = "1TePlQM14HIjQLf8QyivWGH9NwAVQXsd";
+        private const string ApiKey = "1TePlQM14HIjQLf8QyivWGH9NwAVQXsd";
 
         public static int Main(string[] args) => CommandLineApplication.Execute<Program>(args);
 
         [Argument(0, Description = "The search to execute.")]
         [Required]
+        [UsedImplicitly]
         public string Search { get; }
 
         private void OnExecute()
         {
+            Console.WriteLine("");
+            Console.WriteLine("Thanks for using this CLI. Hope you enjoy it.");
+            Console.WriteLine("Visit https://github.com/DavidDeSloovere/giphy-cli for comments, issues, ...");
             Console.WriteLine("");
             Console.WriteLine($"Searching giphy.com API for `{this.Search}`...");
 
@@ -31,11 +38,14 @@ namespace GiphyCli
                 return;
             }
 
+            var markdownText = $"![{result.Title}]({result.GifUrl})";
+            var gifUrlText = $"{result.GifUrl}";
+
             Console.WriteLine($"Found `{result.Title}` at {result.Url}");
             Console.WriteLine("");
 
-            Console.WriteLine("GIF URL");
-            Console.WriteLine($"{result.GifUrl}");
+            Console.WriteLine("> GIF URL");
+            Console.WriteLine(gifUrlText);
             Console.WriteLine("");
 
             if (Environment.GetEnvironmentVariable("TERM_PROGRAM") == "iTerm.app")
@@ -49,15 +59,38 @@ namespace GiphyCli
                 }
                 Console.Write("\u0007");
                 Console.WriteLine("");
-                Console.WriteLine("");
             }
 
-            Console.WriteLine("MARKDOWN:");
-            Console.WriteLine($"![{result.Title}]({result.GifUrl})");
+            Console.WriteLine("> MARKDOWN");
+            Console.WriteLine(markdownText);
             Console.WriteLine("");
-            Console.WriteLine("Thanks for using this CLI. Hope you enjoy it.");
-            Console.WriteLine("Visit https://github.com/DavidDeSloovere/giphy-cli for comments, issues, ...");
-            Console.WriteLine("");
+
+            // Awesome lib: https://github.com/shibayan/Sharprompt
+            var value = Sharprompt.Prompt.Select<ActionSelectOptions>("What should I do next?");
+            switch (value)
+            {
+                case ActionSelectOptions.OpenGiphyCom:
+                    OpenBrowser(result.Url);
+                    break;
+
+                case ActionSelectOptions.CopyUrl:
+                    ClipboardService.SetText(gifUrlText);
+                    break;
+
+                case ActionSelectOptions.CopyMarkdown:
+                    ClipboardService.SetText(markdownText);
+                    break;
+            }
+        }
+
+        public static void OpenBrowser(string url)
+        {
+            var psi = new ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            };
+            Process.Start (psi);
         }
     }
 }
