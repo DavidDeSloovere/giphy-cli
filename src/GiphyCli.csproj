@@ -4,7 +4,7 @@
     <ToolCommandName>giphy</ToolCommandName>
     <PackAsTool>True</PackAsTool>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <Authors>DavidDeSloovere</Authors>
     <Company />
     <Description>Unofficial Giphy CLI as global dotnet tool - get that url or markdown fast.</Description>
