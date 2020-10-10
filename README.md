@@ -18,6 +18,12 @@ Install the Giphy CLI with this command:
 > dotnet tool install --global GiphyCli
 ```
 
+Update the Giphy CLI with this command:
+
+```
+> dotnet tool update --global Giphycli
+```
+
 To search for a gif, simply use
 
 ```
@@ -28,21 +34,16 @@ To search for a gif, simply use
 
 ```
 > giphy cheeseburger
-```
-
-That's it; no options needed. Just pass the search as the first argument.
-
-```
 > giphy "awesome cheeseburger"
 ```
 
-So it would look something like this:
+Giphy CLI now an includes interactive prompt.
 
 ![Screenshot Giphy CLI](README-screenshot.png)
 
-And allow you to just paste the markdown that results in this:
+Have markdown copied to clipboard _et voila_.
 
-![high five amy poehler GIF](https://media1.giphy.com/media/120jXUxrHF5QJ2/giphy.gif)
+![will ferrell yes GIF](https://media3.giphy.com/media/3ohzdIuqJoo8QdKlnW/giphy.gif)
 
 ## Features
 

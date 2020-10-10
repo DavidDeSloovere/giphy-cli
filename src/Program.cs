@@ -41,7 +41,7 @@ namespace GiphyCli
             var markdownText = $"![{result.Title}]({result.GifUrl})";
             var gifUrlText = $"{result.GifUrl}";
 
-            Console.WriteLine($"> Found `{result.Title}` at {result.Url}");
+            Console.WriteLine($"> Found `{result.Title}`");
             Console.WriteLine($"{result.Url}");
             Console.WriteLine("");
 
