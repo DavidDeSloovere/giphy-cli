@@ -3,15 +3,14 @@ Giphy CLI as global dotnet tool - get that url or markdown fast
 
 Comments, ideas, bug reports and PR are welcome here.
 
-[![Build Status](https://dev.azure.com/daviddesloovere/giphy-cli/_apis/build/status/DavidDeSloovere.giphy-cli)](https://dev.azure.com/daviddesloovere/giphy-cli/_build/latest?definitionId=1)
-
+![.NET Core CI](https://github.com/DavidDeSloovere/giphy-cli/workflows/.NET%20Core%20CI/badge.svg)
 
 ## Get started
 
 Head over to [GiphyCli on NuGet](https://www.nuget.org/packages/GiphyCli) or continue reading:
 
 
-You'll need the .NET Core SDK [2.1.300](https://www.microsoft.com/net/download) or newer to install global tools.
+You'll need the .NET Core SDK [3.1](https://www.microsoft.com/net/download) or newer to install global tools.
 
 Install the Giphy CLI with this command:
 
