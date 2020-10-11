@@ -1,5 +1,5 @@
 # giphy-cli
-Giphy CLI as global dotnet tool - get that url or markdown fast
+A .NET Global tool to search for a gif on Giphy and optionally open the link in the browser or copy the link or markdown to the clipboard.
 
 Comments, ideas, bug reports and PR are welcome here.
 
