@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <ToolCommandName>giphy</ToolCommandName>
@@ -7,7 +7,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <Authors>DavidDeSloovere</Authors>
     <Company />
-    <Description>Unofficial Giphy CLI as global dotnet tool - get that url or markdown fast.
+    <Description>Unofficial Giphy CLI as global dotnet tool (.NET 5) - get that url or markdown fast.
 &gt; `giphy lolcats`</Description>
     <PackageProjectUrl>https://github.com/DavidDeSloovere/giphy-cli</PackageProjectUrl>
     <RepositoryUrl>https://github.com/DavidDeSloovere/giphy-cli.git</RepositoryUrl>
