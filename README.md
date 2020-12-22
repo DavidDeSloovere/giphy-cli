@@ -48,7 +48,7 @@ Giphy CLI now an includes interactive prompt.
 
 Have markdown copied to clipboard _et voila_.
 
-![will ferrell yes GIF](https://media3.giphy.com/media/3ohzdIuqJoo8QdKlnW/giphy.gif)
+![will ferrell yes GIF](https://media.giphy.com/media/3ohzdIuqJoo8QdKlnW/giphy-downsized.gif)
 
 ## Features
 
