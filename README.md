@@ -9,8 +9,7 @@ Comments, ideas, bug reports and PR are welcome here.
 
 Head over to [GiphyCli on NuGet](https://www.nuget.org/packages/GiphyCli) or continue reading:
 
-
-You'll need the .NET Core SDK [3.1](https://www.microsoft.com/net/download) or newer to install global tools.
+You'll need the [.NET 5](https://www.microsoft.com/net/download) or newer.
 
 Install the Giphy CLI with this command:
 
@@ -35,6 +34,12 @@ To search for a gif, simply use
 ```
 > giphy cheeseburger
 > giphy "awesome cheeseburger"
+```
+
+Output markdown only, great for using in notebooks.
+```
+> giphy cheeseburger -m
+> giphy cheeseburger --markdown
 ```
 
 Giphy CLI now an includes interactive prompt.
