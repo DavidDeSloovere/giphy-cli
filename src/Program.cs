@@ -22,12 +22,19 @@ namespace GiphyCli
         [UsedImplicitly]
         public string Search { get; }
 
+        [Option(ShowInHelpText = true, ShortName = "m", LongName = "markdown", Description = "Output only markdown")]
+        public bool Markdown { get; set; }
+
         private void OnExecute()
         {
-            Console.WriteLine("");
-            Console.WriteAscii("GIPHY CLI");
-            Console.WriteLine("");
-            Console.WriteLine($"Searching giphy.com API for `{this.Search}`...");
+            if (!this.Markdown)
+            {
+                Console.WriteLine("");
+                Console.WriteAscii("GIPHY CLI");
+                Console.WriteLine("");
+                Console.WriteLine($"Searching giphy.com API for `{this.Search}`...");
+                Console.WriteLine("");
+            }
 
             var client = new GiphyApi(ApiKey);
             var result = client.Search(this.Search);
@@ -39,6 +46,12 @@ namespace GiphyCli
             }
 
             var markdownText = $"![{result.Title}]({result.GifUrl})";
+            if (this.Markdown)
+            {
+                Console.WriteLine(markdownText);
+                return;
+            }
+
             var gifUrlText = $"{result.GifUrl}";
 
             Console.WriteLine($"> Found `{result.Title}`");
