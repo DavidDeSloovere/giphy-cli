@@ -4,7 +4,7 @@
     <ToolCommandName>giphy</ToolCommandName>
     <PackAsTool>True</PackAsTool>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <Authors>DavidDeSloovere</Authors>
     <Company />
     <Description>Unofficial Giphy CLI as global dotnet tool - get that url or markdown fast.
@@ -15,8 +15,8 @@
     <Product>Giphy CLI</Product>
     <RepositoryType>git</RepositoryType>
     <PackageIconUrl></PackageIconUrl>
-    <Version>1.2.0</Version>
-    <PackageReleaseNotes>Interactive prompt with option to copy markdown to clipboard.</PackageReleaseNotes>
+    <Version>2.0.0</Version>
+    <PackageReleaseNotes>Extra `-m` option to only output markdown.</PackageReleaseNotes>
     <PackageIcon>icon.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
