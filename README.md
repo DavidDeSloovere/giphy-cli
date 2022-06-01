@@ -1,7 +1,7 @@
 # giphy-cli
 A .NET Global tool to search for a gif on Giphy and optionally open the link in the browser or copy the link or markdown to the clipboard.
 
-Was featured in a presentation about .NET interactive noteboook at .NET Conf 2020: https://youtu.be/938jBJ-tK3c?t=1025
+Was featured in a presentation about .NET interactive notebooks at .NET Conf 2020: https://youtu.be/938jBJ-tK3c?t=1025
 
 Comments, ideas, bug reports and PR are welcome here.
 
