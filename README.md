@@ -11,7 +11,7 @@ Comments, ideas, bug reports and PR are welcome here.
 
 Head over to [GiphyCli on NuGet](https://www.nuget.org/packages/GiphyCli) or continue reading:
 
-You'll need the [.NET 5](https://www.microsoft.com/net/download) or newer.
+You'll need the [.NET 6 runtime](https://www.microsoft.com/net/download) or newer.
 
 Install the Giphy CLI with this command:
 
@@ -55,4 +55,4 @@ Have markdown copied to clipboard _et voila_.
 ## Features
 
 - Interactive prompt: Open giphy.com URL, copy .gif deeplink or __copy markdown to clipboard__
-- Preview image in iTerm2 (PR by https://github.com/slang25) 
+- Preview image in iTerm2 (PR by https://github.com/slang25)
