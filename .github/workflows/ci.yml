@@ -70,4 +70,4 @@ jobs:
           push: ${{ github.ref == 'refs/heads/main' }}
           tags: |
             ghcr.io/daviddesloovere/giphy-cli:${{ steps.date.outputs.date }}
-#            ghcr.io/daviddesloovere/giphy-cli:latest
+            ghcr.io/daviddesloovere/giphy-cli:latest
