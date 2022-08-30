@@ -58,11 +58,11 @@ Output markdown only, great for using in notebooks.
 
 Giphy CLI now an includes interactive prompt.
 
-![Screenshot Giphy CLI](README-screenshot.png)
+![Screenshot Giphy CLI](https://raw.githubusercontent.com/DavidDeSloovere/giphy-cli/main/README-screenshot.png)
 
 Have markdown copied to clipboard _et voila_.
 
-![will ferrell yes GIF](https://media.giphy.com/media/3ohzdIuqJoo8QdKlnW/giphy-downsized.gif)
+![will ferrell yes GIF](https://raw.githubusercontent.com/DavidDeSloovere/giphy-cli/main/README-example.gif)
 
 ## Features
 
