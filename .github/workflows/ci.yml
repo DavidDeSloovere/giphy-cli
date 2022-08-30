@@ -66,4 +66,4 @@ jobs:
           push: true
           tags: |
             ghcr.io/daviddesloovere/giphy-cli:latest
-          #,ghcr.io/daviddesloovere/giphy-cli:$(date +%s)
+            ghcr.io/daviddesloovere/giphy-cli:$(date +%s)
