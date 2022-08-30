@@ -4,12 +4,10 @@ namespace GiphyCli
     using System.ComponentModel.DataAnnotations;
     using System.Diagnostics;
     using System.Net.Http;
-    using JetBrains.Annotations;
     using McMaster.Extensions.CommandLineUtils;
     using TextCopy;
-    using Console = Colorful.Console;
 
-    [Command(Description = "Global CLI to quickly get a Giphy link or markdown for your search (which should always be lolcats).")]
+    [Command(Description = "CLI to quickly get a Giphy link or markdown for your search (which should always be lolcats).")]
     public class Program
     {
         // one API key for now
@@ -19,18 +17,20 @@ namespace GiphyCli
 
         [Argument(0, Description = "The search to execute.")]
         [Required]
-        [UsedImplicitly]
         public string Search { get; }
 
         [Option(ShowInHelpText = true, ShortName = "m", LongName = "markdown", Description = "Output only markdown")]
-        public bool Markdown { get; set; }
+        public bool MarkdownOnly { get; set; }
+
+        [Option(ShowInHelpText = true, ShortName = "nq", LongName = "no-questions-asked", Description = "Output markdown and link - don't ask any questions")]
+        public bool NoQuestionsAsked { get; set; }
 
         private void OnExecute()
         {
-            if (!this.Markdown)
+            if (!this.MarkdownOnly)
             {
                 Console.WriteLine("");
-                Console.WriteAscii("GIPHY CLI");
+                Colorful.Console.WriteAscii("GIPHY CLI");
                 Console.WriteLine("");
                 Console.WriteLine($"Searching giphy.com API for `{this.Search}`...");
                 Console.WriteLine("");
@@ -46,7 +46,7 @@ namespace GiphyCli
             }
 
             var markdownText = $"![{result.Title}]({result.GifUrl})";
-            if (this.Markdown)
+            if (this.MarkdownOnly)
             {
                 Console.WriteLine(markdownText);
                 return;
@@ -65,6 +65,12 @@ namespace GiphyCli
             Console.WriteLine("> MARKDOWN");
             Console.WriteLine(markdownText);
             Console.WriteLine("");
+
+            if (this.NoQuestionsAsked)
+            {
+                Thanks();
+                return;
+            }
 
             if (Environment.GetEnvironmentVariable("TERM_PROGRAM") == "iTerm.app")
             {
@@ -97,9 +103,13 @@ namespace GiphyCli
                     break;
             }
 
-            Console.WriteLine("");
-            Console.WriteLine("Thanks for using the Giphy CLI for .NET. Visit https://github.com/DavidDeSloovere/giphy-cli for comments, issues, ...");
+            Thanks();
+        }
 
+        private static void Thanks()
+        {
+            Console.WriteLine("");
+            Console.WriteLine("Thanks for using the Giphy CLI - visit https://github.com/DavidDeSloovere/giphy-cli for comments, issues, ...");
         }
 
         public static void OpenBrowser(string url)

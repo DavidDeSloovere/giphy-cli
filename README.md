@@ -1,15 +1,22 @@
 # giphy-cli
-A .NET Global tool to search for a gif on Giphy and optionally open the link in the browser or copy the link or markdown to the clipboard.
+
+A CLI, published as Docker image and .NET Global tool, to search for a gif on Giphy and optionally open the link in the browser or copy the link or markdown to the clipboard.
 
 Was featured in a presentation about **.NET interactive notebooks** at .NET Conf 2020: https://youtu.be/938jBJ-tK3c?t=1025
 
-There is an example notebook included [dotnet-interactive-notebook-sample.ipynb](https://github.com/DavidDeSloovere/giphy-cli/blob/master/docs/dotnet-interactive-notebook-sample.ipynb) 
+There is an example notebook included [dotnet-interactive-notebook-sample.ipynb](https://github.com/DavidDeSloovere/giphy-cli/blob/master/docs/dotnet-interactive-notebook-sample.ipynb)
 
 Comments, ideas, bug reports and PR are welcome here.
 
 ![.NET Core CI](https://github.com/DavidDeSloovere/giphy-cli/workflows/.NET%20Core%20CI/badge.svg)
 
-## Get started
+## Docker
+
+You can run this CLI via Docker. This will output markdown and a link to giphy.com.
+
+`docker run --rm -it giphycli:latest "lolcats"`
+
+## .NET global tool
 
 Head over to [GiphyCli on NuGet](https://www.nuget.org/packages/GiphyCli) or continue reading:
 
@@ -41,6 +48,7 @@ To search for a gif, simply use
 ```
 
 Output markdown only, great for using in notebooks.
+
 ```
 > giphy cheeseburger -m
 > giphy cheeseburger --markdown
@@ -56,5 +64,5 @@ Have markdown copied to clipboard _et voila_.
 
 ## Features
 
-- Interactive prompt: Open giphy.com URL, copy .gif deeplink or __copy markdown to clipboard__
+- Interactive prompt: Open giphy.com URL, copy .gif deeplink or **copy markdown to clipboard**
 - Preview image in iTerm2 (PR by https://github.com/slang25)
