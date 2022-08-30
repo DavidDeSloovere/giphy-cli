@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build_nuget:
     runs-on: ubuntu-latest
     env:
       DOTNET_NOLOGO: true
@@ -32,3 +32,23 @@ jobs:
         with:
           PROJECT_FILE_PATH: src/GiphyCli.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+
+  build_docker:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Docker Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Build and push to Docker Hub
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: daviddesloovere/giphy-cli:latest
