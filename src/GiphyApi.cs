@@ -3,7 +3,6 @@ namespace GiphyCli
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using JetBrains.Annotations;
     using RestSharp;
     using RestSharp.Deserializers;
 
@@ -18,7 +17,6 @@ namespace GiphyCli
             this.apiKey = apiKey;
         }
 
-        [CanBeNull]
         public GifObject Search(string search)
         {
             var restRequest = new RestRequest();

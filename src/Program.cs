@@ -4,10 +4,8 @@ namespace GiphyCli
     using System.ComponentModel.DataAnnotations;
     using System.Diagnostics;
     using System.Net.Http;
-    using JetBrains.Annotations;
     using McMaster.Extensions.CommandLineUtils;
     using TextCopy;
-    using Console = Colorful.Console;
 
     [Command(Description = "Global CLI to quickly get a Giphy link or markdown for your search (which should always be lolcats).")]
     public class Program
@@ -19,7 +17,6 @@ namespace GiphyCli
 
         [Argument(0, Description = "The search to execute.")]
         [Required]
-        [UsedImplicitly]
         public string Search { get; }
 
         [Option(ShowInHelpText = true, ShortName = "m", LongName = "markdown", Description = "Output only markdown")]
@@ -30,7 +27,7 @@ namespace GiphyCli
             if (!this.Markdown)
             {
                 Console.WriteLine("");
-                Console.WriteAscii("GIPHY CLI");
+                Colorful.Console.WriteAscii("GIPHY CLI");
                 Console.WriteLine("");
                 Console.WriteLine($"Searching giphy.com API for `{this.Search}`...");
                 Console.WriteLine("");
