@@ -47,6 +47,7 @@ jobs:
 
     env:
       REGISTRY: ghcr.io
+      DATESTAMP: $(date +%s)
 
     permissions:
       contents: read
@@ -66,4 +67,4 @@ jobs:
           push: ${{ github.ref == 'refs/heads/main' }}
           tags: |
             ghcr.io/daviddesloovere/giphy-cli:latest
-            ghcr.io/daviddesloovere/giphy-cli:$(date +%s)
+            ghcr.io/daviddesloovere/giphy-cli:${{ env.DATESTAMP }}
