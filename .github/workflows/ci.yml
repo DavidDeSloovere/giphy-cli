@@ -44,6 +44,9 @@ jobs:
 
   build_docker:
     runs-on: ubuntu-latest
+
+    env:
+      REGISTRY: ghcr.io
     
     permissions:
       contents: read
