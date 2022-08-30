@@ -14,7 +14,9 @@ Comments, ideas, bug reports and PR are welcome here.
 
 You can run this CLI via Docker. This will output markdown and a link to giphy.com.
 
-`docker run --rm -it giphycli:latest "lolcats"`
+`docker run --rm -it giphy-cli:latest "lolcats"`
+
+`docker run --rm -it ghcr.io/daviddesloovere/giphy-cli:latest "lolcats"`
 
 ## .NET global tool
 
