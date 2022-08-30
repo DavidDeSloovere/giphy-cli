@@ -47,17 +47,15 @@ jobs:
 
     env:
       REGISTRY: ghcr.io
-      DATESTAMP: $(date +%s)
 
     permissions:
       contents: read
       packages: write
 
     steps:
-      - name: Set environment variable
-        run: echo "RELEASE_VERSION=${GITHUB_REF:11}" >> $GITHUB_ENV
-      - name: Test environment variable
-        run: echo ${{ env.RELEASE_VERSION }}
+      - name: Get current date # get the date of the build
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d--%M-%S')"
 
       - name: Docker Login
         uses: docker/login-action@v1.12.0
@@ -71,5 +69,5 @@ jobs:
         with:
           push: ${{ github.ref == 'refs/heads/main' }}
           tags: |
-            ghcr.io/daviddesloovere/giphy-cli:${{ env.RELEASE_VERSION }}
+            ghcr.io/daviddesloovere/giphy-cli:${{ steps.date.outputs.date }}
 #            ghcr.io/daviddesloovere/giphy-cli:latest
