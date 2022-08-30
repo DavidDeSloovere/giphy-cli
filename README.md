@@ -4,7 +4,7 @@ A CLI, published as Docker image and .NET Global tool, to search for a gif on Gi
 
 Was featured in a presentation about **.NET interactive notebooks** at .NET Conf 2020: https://youtu.be/938jBJ-tK3c?t=1025
 
-There is an example notebook included [dotnet-interactive-notebook-sample.ipynb](https://github.com/DavidDeSloovere/giphy-cli/blob/master/docs/dotnet-interactive-notebook-sample.ipynb)
+There is an example notebook included [dotnet-interactive-notebook-sample.ipynb](https://github.com/DavidDeSloovere/giphy-cli/blob/main/docs/dotnet-interactive-notebook-sample.ipynb)
 
 Comments, ideas, bug reports and PR are welcome here.
 
@@ -14,7 +14,9 @@ Comments, ideas, bug reports and PR are welcome here.
 
 You can run this CLI via Docker. This will output markdown and a link to giphy.com.
 
-`docker run --rm -it giphycli:latest "lolcats"`
+`docker run --rm -it giphy-cli:latest "lolcats"`
+
+`docker run --rm -it ghcr.io/daviddesloovere/giphy-cli:latest "lolcats"`
 
 ## .NET global tool
 
