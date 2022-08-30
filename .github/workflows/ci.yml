@@ -63,7 +63,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          push: true
+          push: ${{ github.ref == 'refs/heads/master' }}
           tags: |
             ghcr.io/daviddesloovere/giphy-cli:latest
             ghcr.io/daviddesloovere/giphy-cli:$(date +%s)
