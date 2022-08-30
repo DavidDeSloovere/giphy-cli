@@ -9,7 +9,7 @@ on:
 jobs:
   build_nuget:
     runs-on: ubuntu-latest
-    
+
     env:
       DOTNET_NOLOGO: true
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
@@ -47,21 +47,23 @@ jobs:
 
     env:
       REGISTRY: ghcr.io
-    
+
     permissions:
       contents: read
       packages: write
 
-    steps:         
+    steps:
       - name: Docker Login
         uses: docker/login-action@v1.12.0
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
           push: true
-          #tags: ghcr.io/daviddesloovere/giphy-cli:latest #,ghcr.io/daviddesloovere/giphy-cli:$(date +%s)
+          tags: |
+            ghcr.io/daviddesloovere/giphy-cli:latest
+          #,ghcr.io/daviddesloovere/giphy-cli:$(date +%s)
