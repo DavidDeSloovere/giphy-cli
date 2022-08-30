@@ -2,9 +2,9 @@ name: CI build
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build_nuget:
@@ -63,7 +63,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          push: ${{ github.ref == 'refs/heads/master' }}
+          push: ${{ github.ref == 'refs/heads/main' }}
           tags: |
             ghcr.io/daviddesloovere/giphy-cli:latest
             ghcr.io/daviddesloovere/giphy-cli:$(date +%s)
