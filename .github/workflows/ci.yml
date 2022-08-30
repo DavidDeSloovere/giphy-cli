@@ -54,6 +54,11 @@ jobs:
       packages: write
 
     steps:
+      - name: Set environment variable
+        run: echo "RELEASE_VERSION=${GITHUB_REF:11}" >> $GITHUB_ENV
+      - name: Test environment variable
+        run: echo ${{ env.RELEASE_VERSION }}
+
       - name: Docker Login
         uses: docker/login-action@v1.12.0
         with:
@@ -66,5 +71,5 @@ jobs:
         with:
           push: ${{ github.ref == 'refs/heads/main' }}
           tags: |
-            ghcr.io/daviddesloovere/giphy-cli:latest
-            ghcr.io/daviddesloovere/giphy-cli:${{ env.DATESTAMP }}
+            ghcr.io/daviddesloovere/giphy-cli:${{ env.RELEASE_VERSION }}
+#            ghcr.io/daviddesloovere/giphy-cli:latest
