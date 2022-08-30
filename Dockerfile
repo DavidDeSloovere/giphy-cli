@@ -13,4 +13,4 @@ RUN dotnet publish -c Release -o /app --no-restore
 FROM mcr.microsoft.com/dotnet/runtime:6.0
 WORKDIR /app
 COPY --from=build /app .
-ENTRYPOINT ["dotnet", "giphycli.dll"]
+ENTRYPOINT ["dotnet", "GiphyCli.dll", "--no-questions-asked"]
